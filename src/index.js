@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React,{useState} from "react"
+import reactDOM  from "react-dom"
+import index from "./index.css"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App =(props)=>{
+
+const [count,setCount]=useState(1)
+
+const IncVal=()=>{
+
+ setCount(count+1)
+    //console.log("clicked");
+    
+}
+
+
+
+
+ 
+return (
+    <>
+    <div>
+    <h1>{count}</h1>
+    <button onClick={IncVal}>click me</button>
+    <h3> add with the value of 1 </h3>
+    <h4>get date={props.time}</h4>
+    </div>
+    </>
+)
+}
+
+reactDOM.render(<App time ="12pm"/> ,
+    document.getElementById("root"))
